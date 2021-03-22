@@ -1,0 +1,22 @@
+<div class="content" role="main">
+    <h2>Categorías</h2>
+    <p>Resoluciones mas comunes por:</p>
+    <svg class="material-icons" width="24" height="24">date_range</svg>
+    <div class="card-container">
+        <a class="card" (click)="goToPeriod()">
+            <span>Periodo determinado</span>
+        </a>
+
+        <a class="card" (click)="goToGeographical()">
+            <span>Zona Geográfica + periodo determinado</span>
+        </a>
+
+        <a class="card" (click)="goToPolice()">
+            <span>Número de Reportes por distrito policial</span>
+        </a>
+    </div>
+
+    <app-period *ngIf="showPeriod"></app-period>
+    <app-geographical-area  *ngIf="showGeographical"></app-geographical-area>
+    <app-police-district *ngIf="showPolice"></app-police-district>
+</div>

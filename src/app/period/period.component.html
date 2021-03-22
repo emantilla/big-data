@@ -1,0 +1,39 @@
+<div style="margin-top: 15%;">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="startDate">startDate</label>
+            <mat-form-field class="col-10 col-md-4 input-style ">
+                <input matInput [matDatepicker]="picker" (dateInput)="setValueField('startDate', $event);"
+                    (dateChange)="setValueField('startDate', $event);" [placeholder]='startDatePlaceholder' disabled>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker disabled="false"></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+
+        <div class="form-group">
+            <label for="startHour">startHour</label>
+            <input formControlName="startHour" id="startHour" type="text" class="form-control">
+
+        </div>
+
+        <div class="form-group">
+            <label for="endDate">endDate</label>
+            <mat-form-field class="col-10 col-md-4 input-style ">
+                <input matInput [matDatepicker]="picker2" (dateInput)="setValueField('endDate', $event);"
+                    (dateChange)="setValueField('endDate', $event);" [placeholder]='endDatePlaceholder' disabled>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 disabled="false"></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <label for="endHour">endHour</label>
+            <input formControlName="endHour" id="endHour" type="text" class="form-control">
+
+        </div>
+
+    </form>
+
+</div>
